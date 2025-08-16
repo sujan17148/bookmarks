@@ -3,16 +3,59 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Bookmarks</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%23666'/%3E%3Ctext x='50' y='60' font-size='50' text-anchor='middle' fill='white'%3E★%3C/text%3E%3C/svg%3E" />
+    <title>Save It Up</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
-  <body class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100">
-    <main class="max-w-5xl mx-auto p-6">
+  <body class="min-h-screen pt-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 flex flex-col items-center justify-center">
+    <main class="max-w-5xl  mx-auto p-6 ">
+      <!-- Google Search Section -->
+      <div class="text-center mb-8">
+        <!-- Google Logo -->
+        <div class="mb-6">
+          <h1 class="text-8xl font-bold text-white">
+            <span class="text-blue-500">G</span>
+            <span class="text-red-500">o</span>
+            <span class="text-yellow-500">o</span>
+            <span class="text-blue-500">g</span>
+            <span class="text-green-500">l</span>
+            <span class="text-red-500">e</span>
+          </h1>
+        </div>
+        
+        <!-- Google Search Bar -->
+        <div class="max-w-2xl mx-auto mb-8">
+          <form action="https://www.google.com/search" method="get" class="relative">
+            <div class="relative">
+              <input 
+                type="text" 
+                name="q" 
+                placeholder="Search Google or type a URL" 
+                aria-label="Search Google"
+                class="w-full px-6 py-4 bg-gray-800/50 text-gray-100 border border-gray-600 rounded-full outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 placeholder-gray-400 text-lg pr-16"
+              />
+              <button 
+                type="submit" 
+                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white h-10 w-10 rounded-full transition-colors duration-200"
+                aria-label="Search"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Bookmarks Section -->
       <header class="flex justify-between items-center mb-5">
-        <h1 class="text-2xl font-bold tracking-wide">Bookmarks</h1>
-        <input id="search" type="search" placeholder="Search… (title, url)" aria-label="Search bookmarks" class="w-72 px-3 py-2.5 bg-gray-800/50 text-gray-100 border border-gray-600 rounded-lg outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400/30 placeholder-gray-400" />
+        <h2 class="text-2xl font-bold tracking-wide">Bookmarks</h2>
+        <input 
+          id="search" 
+          type="search" 
+          placeholder="Search bookmarks…" 
+          aria-label="Search bookmarks" 
+          class="w-72 px-3 py-2.5 bg-gray-800/50 text-gray-100 border border-gray-600 rounded-lg outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400/30 placeholder-gray-400" 
+        />
       </header>
 
       <section id="grid" class="flex flex-wrap gap-4" aria-live="polite"></section>

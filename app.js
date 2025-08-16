@@ -2,7 +2,7 @@
 const grid = document.getElementById("grid");
 LINKS.forEach(({ title, link, logo, color, description }) => {
   grid.innerHTML += `
-    <a href="${link}" target="_blank" rel="noopener noreferrer" class="card w-[calc(25%-12px)] p-4 bg-gray-800/30 border border-gray-600 rounded-lg hover:bg-gray-800/50 hover:border-gray-500 hover:-translate-y-1 transition-all duration-200 flex items-center gap-3">
+    <a href="${link}" rel="noopener noreferrer" class="card w-[calc(25%-12px)] p-4 bg-gray-800/30 border border-gray-600 rounded-lg hover:bg-gray-800/50 hover:border-gray-500 hover:-translate-y-1 transition-all duration-200 flex items-center gap-3">
       <div class="icon w-11 h-11 rounded-lg flex items-center justify-center text-white text-lg" style="background: ${color}">
         <i class="${logo}"></i>
       </div>
