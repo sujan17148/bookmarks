@@ -1,134 +1,26 @@
-(function () {
-  "use strict";
+// Render all bookmarks
+const grid = document.getElementById("grid");
+LINKS.forEach(({ title, link, logo, color, description }) => {
+  grid.innerHTML += `
+    <a href="${link}" target="_blank" rel="noopener noreferrer" class="card w-[calc(25%-12px)] p-4 bg-gray-800/30 border border-gray-600 rounded-lg hover:bg-gray-800/50 hover:border-gray-500 hover:-translate-y-1 transition-all duration-200 flex items-center gap-3">
+      <div class="icon w-11 h-11 rounded-lg flex items-center justify-center text-white text-lg" style="background: ${color}">
+        <i class="${logo}"></i>
+      </div>
+      <div class="content flex-1 min-w-0">
+        <p class="title text-sm font-semibold text-gray-100 mb-1 line-clamp-1">${title}</p>
+        <p class="description text-xs text-gray-400 line-clamp-1">${description}</p>
+      </div>
+    </a>
+  `;
+});
 
-  /** @typedef {{title:string, link:string}} Link */
-
-  function render(links) {
-    const grid = document.getElementById("grid");
-    if (!grid) return;
-
-    const fragment = document.createDocumentFragment();
-
-    for (const { title, link } of links) {
-      const card = document.createElement("a");
-      card.className = "card";
-      card.href = link;
-      card.target = "_blank";
-      card.rel = "noopener noreferrer";
-
-      const icon = document.createElement("div");
-      icon.className = "icon";
-
-      const img = document.createElement("img");
-      img.className = "logo";
-      img.alt = `${title} logo`;
-      img.referrerPolicy = "no-referrer";
-      img.src = getIconUrl(link);
-      img.onerror = () => {
-        // Fallback to initial if icon unavailable
-        img.remove();
-        icon.textContent = getInitial(title);
-      };
-
-      icon.appendChild(img);
-
-      const titleEl = document.createElement("div");
-      titleEl.className = "title";
-      titleEl.textContent = title;
-
-      const metaEl = document.createElement("div");
-      metaEl.className = "meta";
-      metaEl.textContent = extractHostname(link);
-
-      card.appendChild(icon);
-      card.appendChild(titleEl);
-      card.appendChild(metaEl);
-
-      fragment.appendChild(card);
-    }
-
-    grid.replaceChildren(fragment);
-  }
-
-  function getInitial(title) {
-    const trimmed = (title || "").trim();
-    const match = trimmed.match(/\p{L}/u);
-    return match ? match[0].toUpperCase() : "★";
-  }
-
-  function extractHostname(url) {
-    try {
-      const { hostname } = new URL(url);
-      return hostname.replace(/^www\./, "");
-    } catch {
-      return url;
-    }
-  }
-
-  function getIconUrl(url) {
-    const host = (() => {
-      try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; }
-    })();
-
-    const slug = getSimpleIconSlugForHost(host);
-    if (slug) {
-      // White icon for dark background
-      return `https://cdn.simpleicons.org/${slug}/ffffff`;
-    }
-    // Fallback to DuckDuckGo favicon service
-    return `https://icons.duckduckgo.com/ip3/${host || "example.com"}.ico`;
-  }
-
-  function getSimpleIconSlugForHost(hostname) {
-    if (!hostname) return null;
-    const h = hostname.toLowerCase();
-    // Map known hosts to Simple Icons slugs. Extend as needed.
-    if (h.includes("github.com")) return "github";
-    if (h.includes("chatgpt.com") || h.includes("openai.com")) return "openai";
-    if (h.includes("whatsapp.com")) return "whatsapp";
-    if (h.includes("vitejs.dev")) return "vite";
-    if (h.includes("linkedin.com")) return "linkedin";
-    if (h.includes("twitter.com") || h.includes("x.com")) return "twitter"; // or "x"
-    if (h.includes("messenger.com")) return "messenger";
-    if (h.includes("youtube.com")) return "youtube";
-    if (h.includes("firebase.google.com")) return "firebase";
-    if (h.includes("supabase.com")) return "supabase";
-    if (h.includes("appwrite.io")) return "appwrite";
-    if (h.includes("deepseek.com")) return null; // no guaranteed slug; use favicon
-    if (h.includes("claude.ai") || h.includes("anthropic.com")) return "anthropic";
-    return null;
-  }
-
-  function setupSearch(links) {
-    const input = document.getElementById("search");
-    if (!input) return;
-    const norm = (s) => (s || "").toLowerCase().trim();
-
-    function apply() {
-      const q = norm(input.value);
-      if (!q) {
-        render(links);
-        return;
-      }
-      const filtered = links.filter((l) => {
-        const hay = `${norm(l.title)} ${norm(l.link)}`;
-        return hay.includes(q);
-      });
-      render(filtered);
-    }
-
-    input.addEventListener("input", apply);
-  }
-
-  function main() {
-    const links = Array.isArray(window.LINKS) ? window.LINKS : (typeof LINKS !== "undefined" ? LINKS : []);
-    render(links);
-    setupSearch(links);
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", main);
-  } else {
-    main();
-  }
-})(); 
+// Simple search
+document.getElementById("search").addEventListener("input", (e) => {
+  const query = e.target.value.toLowerCase();
+  document.querySelectorAll(".card").forEach(card => {
+    const title = card.querySelector(".title").textContent.toLowerCase();
+    const description = card.querySelector(".description").textContent.toLowerCase();
+    card.style.display = title.includes(query) || description.includes(query) ? "flex" : "none";
+  });
+});
+ 
