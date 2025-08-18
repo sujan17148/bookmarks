@@ -23,7 +23,7 @@ const BOOKMARK_SECTIONS = [
     color: "#8B5CF6",
     links: [
       { title: "shadcn/ui", link: "https://ui.shadcn.com/", logo: "fas fa-palette", color: "#000000", description: "Re-usable components" },
-      { title: "twekcn", link: "https://twekcn.com/", logo: "fas fa-link", color: "#06B6D4", description: "Customize shadcn" },
+      { title: "tweakcn", link: "https://tweakcn.com/", logo: "fas fa-link", color: "#06B6D4", description: "Customize shadcn" },
       { title: "Framer Motion", link: "https://www.framer.com/motion/", logo: "fas fa-magic", color: "#0055FF", description: "Animation library" },
       { title: "Ant Design", link: "https://ant.design/", logo: "fas fa-ant", color: "#1890FF", description: "Enterprise UI library" },
       { title: "Chakra UI", link: "https://chakra-ui.com/", logo: "fas fa-bolt", color: "#319795", description: "Modern component library" },
