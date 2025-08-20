@@ -14,6 +14,7 @@ const BOOKMARK_SECTIONS = [
       { title: "Twitter (X)", link: "https://twitter.com/", logo: "fab fa-twitter", color: "#1DA1F2", description: "Social media platform" },
       { title: "DeepSeek Chat", link: "https://chat.deepseek.com/", logo: "fas fa-brain", color: "#6366F1", description: "AI coding assistant" },
       { title: "Claude AI", link: "https://claude.ai/", logo: "fas fa-user-tie", color: "#FF6B35", description: "Anthropic AI chat" },
+      { title: "GenSpark AI", link: "https://www.genspark.ai/", logo: "fas fa-sparkles", color: "#06B6D4", description: "AI-powered development" },
     ]
   },
   {
@@ -22,6 +23,7 @@ const BOOKMARK_SECTIONS = [
     icon: "fas fa-palette",
     color: "#8B5CF6",
     links: [
+      { title: "Tailwind CSS Docs", link: "https://tailwindcss.com/docs", logo: "fab fa-css3-alt", color: "#38BDF8", description: "Utility-first CSS" },
       { title: "shadcn/ui", link: "https://ui.shadcn.com/", logo: "fas fa-palette", color: "#000000", description: "Re-usable components" },
       { title: "tweakcn", link: "https://tweakcn.com/", logo: "fas fa-link", color: "#06B6D4", description: "Customize shadcn" },
       { title: "Framer Motion", link: "https://www.framer.com/motion/", logo: "fas fa-magic", color: "#0055FF", description: "Animation library" },
@@ -42,7 +44,6 @@ const BOOKMARK_SECTIONS = [
       { title: "GitHub", link: "https://github.com/", logo: "fab fa-github", color: "#333333", description: "Code repository" },
       { title: "React Docs", link: "https://react.dev/", logo: "fab fa-react", color: "#61DAFB", description: "React framework docs" },
       { title: "Redux Toolkit Docs", link: "https://redux-toolkit.js.org/", logo: "fas fa-cube", color: "#764ABC", description: "State management" },
-      { title: "Tailwind CSS Docs", link: "https://tailwindcss.com/docs", logo: "fab fa-css3-alt", color: "#38BDF8", description: "Utility-first CSS" },
       { title: "MDN Web Docs", link: "https://developer.mozilla.org/", logo: "fab fa-firefox", color: "#FF7139", description: "Web development docs" },
       { title: "Chrome Web Store", link: "https://chromewebstore.google.com/", logo: "fab fa-chrome", color: "#4285F4", description: "Browser extensions" },
       { title: "JavaScript Interview Questions", link: "https://github.com/sudheerj/javascript-interview-questions", logo: "fab fa-js", color: "#F7DF1E", description: "JS interview prep" },
@@ -67,8 +68,8 @@ const BOOKMARK_SECTIONS = [
     icon: "fas fa-tools",
     color: "#EF4444",
     links: [
+      { title: "Yes Chat", link: "https://www.yeschat.ai/", logo: "", color: "#FF6B6B", description: "Markdown editor" },
       { title: "Method Draw", link: "https://editor.method.ac/", logo: "fas fa-draw-polygon", color: "#FF6B6B", description: "SVG editor" },
-      { title: "GenSpark AI", link: "https://www.genspark.ai/", logo: "fas fa-sparkles", color: "#06B6D4", description: "AI-powered development" },
       { title: "100 JavaScript Projects", link: "https://github.com/pradipchaudhary/100-javascript-projects", logo: "fab fa-js-square", color: "#F7DF1E", description: "Practice projects" },
       { title: "10015 Tools", link: "https://10015.io/", logo: "fas fa-tools", color: "#10B981", description: "Developer tools" },
       { title: "Striver A2Z DSA Sheet", link: "https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/", logo: "fas fa-book", color: "#EF4444", description: "DSA practice problems" },
