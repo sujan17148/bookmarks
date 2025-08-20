@@ -40,7 +40,6 @@ const BOOKMARK_SECTIONS = [
     color: "#10B981",
     links: [
       { title: "GitHub", link: "https://github.com/", logo: "fab fa-github", color: "#333333", description: "Code repository" },
-      { title: "My GitHub (sujan17148)", link: "https://github.com/sujan17148", logo: "fab fa-github", color: "#333333", description: "My projects" },
       { title: "React Docs", link: "https://react.dev/", logo: "fab fa-react", color: "#61DAFB", description: "React framework docs" },
       { title: "Redux Toolkit Docs", link: "https://redux-toolkit.js.org/", logo: "fas fa-cube", color: "#764ABC", description: "State management" },
       { title: "Tailwind CSS Docs", link: "https://tailwindcss.com/docs", logo: "fab fa-css3-alt", color: "#38BDF8", description: "Utility-first CSS" },
