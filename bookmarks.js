@@ -18,6 +18,22 @@ const BOOKMARK_SECTIONS = [
     ]
   },
   {
+    id: "development",
+    title: "Development",
+    icon: "fas fa-code",
+    color: "#10B981",
+    links: [
+      { title: "GitHub", link: "https://github.com/", logo: "fab fa-github", color: "#333333", description: "Code repository" },
+      { title: "React Docs", link: "https://react.dev/", logo: "fab fa-react", color: "#61DAFB", description: "React framework docs" },
+      { title: "Redux Toolkit Docs", link: "https://redux-toolkit.js.org/", logo: "fas fa-cube", color: "#764ABC", description: "State management" },
+      { title: "MDN Web Docs", link: "https://developer.mozilla.org/", logo: "fab fa-firefox", color: "#FF7139", description: "Web development docs" },
+      { title: "Chrome Web Store", link: "https://chromewebstore.google.com/", logo: "fab fa-chrome", color: "#4285F4", description: "Browser extensions" },
+      { title: "JavaScript Interview Questions", link: "https://github.com/sudheerj/javascript-interview-questions", logo: "fab fa-js", color: "#F7DF1E", description: "JS interview prep" },
+      { title: "React Interview Questions", link: "https://github.com/sudheerj/reactjs-interview-questions", logo: "fab fa-react", color: "#61DAFB", description: "React interview prep" },
+      { title: "Learn Git", link: "https://github.com/DevMountain/learn-git", logo: "fab fa-git-alt", color: "#F05032", description: "Git tutorials" },
+    ]
+  },
+  {
     id: "ui",
     title: "UI Libraries",
     icon: "fas fa-palette",
@@ -33,22 +49,6 @@ const BOOKMARK_SECTIONS = [
       { title: "Radix UI", link: "https://www.radix-ui.com/", logo: "fas fa-circle", color: "#161618", description: "Headless UI primitives" },
       { title: "Headless UI", link: "https://headlessui.com/", logo: "fas fa-eye-slash", color: "#3B82F6", description: "Unstyled components" },
       { title: "Aceternity UI", link: "https://ui.aceternity.com/", logo: "fas fa-star", color: "#8B5CF6", description: "Modern UI components" },
-    ]
-  },
-  {
-    id: "development",
-    title: "Development",
-    icon: "fas fa-code",
-    color: "#10B981",
-    links: [
-      { title: "GitHub", link: "https://github.com/", logo: "fab fa-github", color: "#333333", description: "Code repository" },
-      { title: "React Docs", link: "https://react.dev/", logo: "fab fa-react", color: "#61DAFB", description: "React framework docs" },
-      { title: "Redux Toolkit Docs", link: "https://redux-toolkit.js.org/", logo: "fas fa-cube", color: "#764ABC", description: "State management" },
-      { title: "MDN Web Docs", link: "https://developer.mozilla.org/", logo: "fab fa-firefox", color: "#FF7139", description: "Web development docs" },
-      { title: "Chrome Web Store", link: "https://chromewebstore.google.com/", logo: "fab fa-chrome", color: "#4285F4", description: "Browser extensions" },
-      { title: "JavaScript Interview Questions", link: "https://github.com/sudheerj/javascript-interview-questions", logo: "fab fa-js", color: "#F7DF1E", description: "JS interview prep" },
-      { title: "React Interview Questions", link: "https://github.com/sudheerj/reactjs-interview-questions", logo: "fab fa-react", color: "#61DAFB", description: "React interview prep" },
-      { title: "Learn Git", link: "https://github.com/DevMountain/learn-git", logo: "fab fa-git-alt", color: "#F05032", description: "Git tutorials" },
     ]
   },
   {

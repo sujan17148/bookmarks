@@ -7,9 +7,9 @@ function renderBookmarks(sections = BOOKMARK_SECTIONS) {
   sections.forEach(section => {
     // Create section header
     const sectionHeader = document.createElement('div');
-    sectionHeader.className = 'w-full mb-4';
+    sectionHeader.className = 'w-full';
     sectionHeader.innerHTML = `
-      <div class="flex items-center gap-3 mb-3">
+      <div class="flex items-center gap-3 mb-1">
         <div class="w-8 h-8 rounded-lg flex items-center justify-center text-white" style="background: ${section.color}">
           <i class="${section.icon}"></i>
         </div>
@@ -20,7 +20,7 @@ function renderBookmarks(sections = BOOKMARK_SECTIONS) {
     
     // Create section content container
     const sectionContent = document.createElement('div');
-    sectionContent.className = 'w-full flex flex-wrap gap-4 mb-8';
+    sectionContent.className = 'w-full flex flex-wrap gap-4';
     
     // Add bookmarks for this section
     section.links.forEach(({ title, link, logo, color, description }) => {
